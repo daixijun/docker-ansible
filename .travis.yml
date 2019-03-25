@@ -4,9 +4,9 @@ env:
   global:
     - DOCKER_IMAGE=daixijun1990/ansible
   matrix:
-    - VERSION=v2.5.15
-    - VERSION=v2.6.15
-    - VERSION=v2.7.9
+    - VERSION=2.5.15
+    - VERSION=2.6.15
+    - VERSION=2.7.9
 
 services:
   - docker
@@ -15,5 +15,5 @@ before_script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 script:
-  - docker build --build-arg version=$VERSION --tag $DOCKER_IMAGE:$VERSION .
-  - docker push $DOCKER_IMAGE:$VERSION
+  - docker build --build-arg version=$VERSION --tag $DOCKER_IMAGE:v$VERSION .
+  - docker push $DOCKER_IMAGE:v$VERSION
