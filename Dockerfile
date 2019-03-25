@@ -2,7 +2,7 @@ FROM alpine:3.8
 
 LABEL maintainer="Xijun Dai <daixijun1990@gmail.com>"
 
-ARG VERSION=2.7.9
+ARG version=2.7.9
 
 RUN apk --no-cache add \
     sudo \
@@ -19,7 +19,7 @@ RUN apk --no-cache add \
     build-base && \
     pip3 install --upgrade pip cffi && \
     pip3 install mitogen && \
-    pip3 install ansible==${VERSION} && \
+    pip3 install ansible==${version} && \
     # pip install --upgrade pywinrm && \
     apk del build-dependencies && \
     rm -rf /root/.cache/pip \
