@@ -12,7 +12,7 @@ services:
   - docker
 
 before_script:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - echo "$DOCKER_PASSWORD" | docker login --username="$DOCKER_USERNAME" --password-stdin
 
 script:
   - docker build --build-arg ansible_version=$ANSIBLE_VERSION --build-arg mitogen_version=$MITOGEN_VERSION --tag $DOCKER_IMAGE:v$ANSIBLE_VERSION .
