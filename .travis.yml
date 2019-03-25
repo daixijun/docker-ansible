@@ -4,9 +4,9 @@ env:
   global:
     - DOCKER_IMAGE=daixijun1990/ansible
   matrix:
-    - VERSION=v2.5.15 EXTRA_TAGS="v2.5"
-    - VERSION=v2.6.15 EXTRA_TAGS="v2.6"
-    - VERSION=v2.7.9 EXTRA_TAGS="v2;v2.7;latest"
+    - VERSION=v2.5.15
+    - VERSION=v2.6.15
+    - VERSION=v2.7.9
 
 services:
   - docker
@@ -17,8 +17,3 @@ before_script:
 script:
   - docker build --build-arg version=$VERSION --tag $DOCKER_IMAGE:$VERSION .
   - docker push $DOCKER_IMAGE:$VERSION
-  - |
-    for tag in ${EXTRA_TAGS//;/$'\n'}
-      docker tag $DOCKER_IMAGE:$VERSION $DOCKER_IMAGE:$tag
-      docker push $DOCKER_IMAGE:$tag
-    fi
