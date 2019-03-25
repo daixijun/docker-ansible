@@ -2,11 +2,11 @@ language: bash
 
 env:
   global:
-    - DOCKER_IMAGE=daixijun1990/ansible
+    - DOCKER_IMAGE=daixijun1990/ansible MITOGEN_VERSION=0.2.6
   matrix:
-    - VERSION=2.5.15
-    - VERSION=2.6.15
-    - VERSION=2.7.9
+    - ANSIBLE_VERSION=2.5.15
+    - ANSIBLE_VERSION=2.6.15
+    - ANSIBLE_VERSION=2.7.9
 
 services:
   - docker
@@ -15,5 +15,5 @@ before_script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 script:
-  - docker build --build-arg version=$VERSION --tag $DOCKER_IMAGE:v$VERSION .
-  - docker push $DOCKER_IMAGE:v$VERSION
+  - docker build --build-arg ansible_version=$ANSIBLE_VERSION --build-arg mitogen_version=$MITOGEN_VERSION --tag $DOCKER_IMAGE:v$ANSIBLE_VERSION .
+  - docker push $DOCKER_IMAGE:v$ANSIBLE_VERSION

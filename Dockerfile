@@ -2,7 +2,8 @@ FROM alpine:3.8
 
 LABEL maintainer="Xijun Dai <daixijun1990@gmail.com>"
 
-ARG version=2.7.9
+ARG ansible_version=2.7.9
+ARG mitogen_version=0.2.6
 
 RUN apk --no-cache add \
     sudo \
@@ -18,8 +19,8 @@ RUN apk --no-cache add \
     openssl-dev \
     build-base && \
     pip3 install --upgrade pip cffi && \
-    pip3 install mitogen && \
-    pip3 install ansible==${version} && \
+    pip3 install mitogen==${mitogen_version} && \
+    pip3 install ansible==${ansible_version} && \
     # pip install --upgrade pywinrm && \
     apk del build-dependencies && \
     rm -rf /root/.cache/pip \
