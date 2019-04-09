@@ -4,7 +4,7 @@ branches:
   only:
     - master
 env:
-  - DOCKER_IMAGE=daixijun1990/ansible ANSIBLE_VERSION=2.7.9
+  - DOCKER_IMAGE=daixijun1990/ansible ANSIBLE_VERSION=2.7.10
 
 services:
   - docker

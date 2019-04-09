@@ -9,4 +9,5 @@
 
 支持的Tags
 
-* [v2.7.9, latest](https://github.com/aliyun/aliyun-cli/releases/tag/v2.7.9)
+* [v2.7.9](https://github.com/daixijun/docker-ansible/releases/tag/v2.7.9)
+* [v2.7.10, latest](https://github.com/daixijun/docker-ansible/releases/tag/v2.7.10)
