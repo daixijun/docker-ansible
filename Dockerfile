@@ -2,7 +2,7 @@ FROM alpine:3.9
 
 LABEL maintainer="Xijun Dai <daixijun1990@gmail.com>"
 
-ARG ansible_version
+ARG ansible_version=2.7.9
 
 RUN apk --no-cache add \
     sudo \
