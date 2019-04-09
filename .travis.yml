@@ -12,3 +12,5 @@ before_script:
 script:
   - docker build --build-arg ansible_version=$ANSIBLE_VERSION --tag $DOCKER_IMAGE:v$ANSIBLE_VERSION .
   - docker push $DOCKER_IMAGE:v$ANSIBLE_VERSION
+  - docker tag $DOCKER_IMAGE:v$ANSIBLE_VERSION $DOCKER_IMAGE:latest
+  - docker push $DOCKER_IMAGE:latest
