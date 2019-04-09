@@ -9,6 +9,4 @@
 
 支持的Tags
 
-* [v2.5.15](https://github.com/aliyun/aliyun-cli/releases/tag/v2.5.15)
-* [v2.6.15](https://github.com/aliyun/aliyun-cli/releases/tag/v2.6.15)
-* [v2.7.9](https://github.com/aliyun/aliyun-cli/releases/tag/v2.7.9)
+* [v2.7.9, latest](https://github.com/aliyun/aliyun-cli/releases/tag/v2.7.9)
