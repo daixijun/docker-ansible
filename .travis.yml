@@ -1,5 +1,8 @@
 language: bash
 
+branches:
+  only:
+    - master
 env:
   - DOCKER_IMAGE=daixijun1990/ansible ANSIBLE_VERSION=2.7.9
 
